@@ -1,2 +1,2 @@
-# express-blog
-基于express服务的博客
+# egg-blog
+基于egg服务的博客
