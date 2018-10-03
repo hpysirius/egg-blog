@@ -10,8 +10,14 @@ class HomeController extends Controller {
   async index() {
     const ctx = this.ctx;
     const { data } = await this.ArticleService.getList(ctx.request.body);
-    console.log(data.data.list[0]);
     await this.ctx.render('index.ejs', {
+      data,
+    });
+  }
+  async detail() {
+    const ctx = this.ctx;
+    const { data } = await this.ArticleService.getList(ctx.request.body);
+    await this.ctx.render('detail.ejs', {
       data,
     });
   }
