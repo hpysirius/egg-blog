@@ -19,7 +19,7 @@
         <% data.data.list.forEach((item, index) => { %>
             <li>
                 <a
-                 href="#"
+                 href="./article/detail/<%- item.id %>"
                  title="<%- item.title %>"><%- item.title %>
                 </a>&nbsp;
                 <span class="date"><%- item.updated_at %></span>

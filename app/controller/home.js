@@ -16,9 +16,9 @@ class HomeController extends Controller {
   }
   async detail() {
     const ctx = this.ctx;
-    const { data } = await this.ArticleService.getList(ctx.request.body);
+    const { data } = await this.ArticleService.getDetail(ctx.params.id);
     await this.ctx.render('detail.ejs', {
-      data,
+      data: data.data,
     });
   }
 }

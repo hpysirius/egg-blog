@@ -20,6 +20,23 @@ class ArticleService extends Service {
     });
     return data;
   }
+  /**
+   * @param {Number} id 'id数据'
+   * @return {Object} data
+   */
+  async getDetail(id) {
+    const data = await this.ctx.curl(`${services.admin}/blog/article/detail`, {
+      // 自动解析 JSON response
+      type: 'post',
+      dataType: 'json',
+      // 3 秒超时
+      timeout: 3000,
+      data: {
+        id,
+      },
+    });
+    return data;
+  }
 
 }
 
