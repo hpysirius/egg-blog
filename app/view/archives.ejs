@@ -1,0 +1,29 @@
+<%-include("header.ejs")%>
+<body>
+<%-include("nav.ejs")%>
+<div id="main">
+<article class="post archive">
+    <h1 class="title">归档</h1>
+    
+    <div class="entry-content">
+        <% Object.keys(data).forEach((key, index) => { %>
+        <h3><%- key %> (<%- data[key].length %>)</h3>
+        <ul>
+                <% data[key].forEach((item, index) => { %>
+            <li>
+                <a
+                 href="./article/detail/<%- item.id %>"
+                 title="<%- item.title %>"><%- item.title %>
+                </a>&nbsp;
+                <span class="date"><%- item.updated_at %></span>
+            </li>     
+        <%})%>
+        </ul>    
+        <%})%>
+    </div>
+</article>
+
+<%-include("footer.ejs")%>
+</div>
+</body>
+</html>
