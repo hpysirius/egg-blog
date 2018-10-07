@@ -46,6 +46,21 @@ class HomeController extends Controller {
       data: data.data,
     });
   }
+  async links() {
+    await this.ctx.render('links.ejs', {
+      data: [],
+    });
+  }
+  async tags() {
+    await this.ctx.render('tags.ejs', {
+      data: [],
+    });
+  }
+  async about() {
+    await this.ctx.render('about.ejs', {
+      data: [],
+    });
+  }
 }
 
 module.exports = HomeController;
