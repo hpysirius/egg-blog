@@ -2,9 +2,9 @@
 
 module.exports = {
   local: {
-    admin: 'http://localhost:7010',
+    admin: 'http://localhost:7002',
   },
   dev: {
-    admin: 'http://localhost:7010',
+    admin: 'http://localhost:7002',
   },
 };
