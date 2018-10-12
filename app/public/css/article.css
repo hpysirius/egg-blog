@@ -201,6 +201,10 @@ article .entry-content .date {
   font-size:14px;
   font-style:italic;
 }
+article .entry-content .type {
+  color:#888;
+  font-size:14px;
+}
 
 /*article .entry-content a:hover {
   text-decoration:underline;
