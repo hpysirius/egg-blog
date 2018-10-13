@@ -18,15 +18,17 @@ class ArticleService extends Service {
     return data;
   }
   /**
-   * @param {Object} 'user数据'
+   * @param {Object} params 'user数据'
    * @return {Object} data
    */
-  async getList() {
+  async getList(params) {
     const data = await this.ctx.curl(`${services.admin}/blog/article/list`, {
       // 自动解析 JSON response
       dataType: 'json',
+      type: 'post',
       // 3 秒超时
       timeout: 3000,
+      data: params,
     });
     return data.data;
   }

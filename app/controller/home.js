@@ -28,7 +28,9 @@ class HomeController extends Controller {
   }
   async index() {
     const ctx = this.ctx;
-    const { data } = await this.ArticleService.getList(ctx.request.body);
+    const { page } = ctx.queries;
+    const pn = page ? page[0] : 1;
+    const { data } = await this.ArticleService.getList({ pn });
     data.list.map(item => {
       item.updated_at = moment(item.updated_at).format(ymdhms);
       return item;
